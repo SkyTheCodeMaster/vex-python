@@ -4,7 +4,7 @@ Various pieces of code that I use in my Vex Robotics projects
 # Docs
 ## [Event Handler](https://github.com/SkyTheCodeMaster/vex-python/blob/master/events.py)
 
-The event handler abstracts adding functions as callbacks into a simple decorator interface.
+The event handler abstracts adding functions as callbacks into a simple decorator interface.  
 In order to use it, you must copy the `EventHandler` class into your code.
 Examples:
 ```py
@@ -53,3 +53,14 @@ def PrintAxis(pos):
 | `screenPressed`                 | `x`        | `y`        |
 | `screenReleased`                | `x`        | `y`        |
 </details>
+
+## [Loop Decorator](https://github.com/SkyTheCodeMaster/vex-python/blob/master/loop.py)
+
+This decorator simply loops a function every X milliseconds.  
+Usage:  
+```py  
+@loop(50) # Argument is in milliseconds  
+def myLoopedFunction():  
+  print("loop")  
+```  
+The function starts running immediately when called with the decorator, you do not need to do `myLoopedFunction()` later on in your code.
