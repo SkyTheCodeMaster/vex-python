@@ -55,18 +55,18 @@ class EventHandler:
     self.c.buttonR1.pressed(self.cbr1p)
     self.c.buttonR2.pressed(self.cbr2p)
     # Controller Button Released
-    self.c.buttonA.pressed(self.cbar)
-    self.c.buttonB.pressed(self.cbbr)
-    self.c.buttonX.pressed(self.cbxr)
-    self.c.buttonY.pressed(self.cbyr)
-    self.c.buttonUp.pressed(self.cbur)
-    self.c.buttonDown.pressed(self.cbdr)
-    self.c.buttonLeft.pressed(self.cblr)
-    self.c.buttonRight.pressed(self.cbrr)
-    self.c.buttonL1.pressed(self.cbl1r)
-    self.c.buttonL2.pressed(self.cbl2r)
-    self.c.buttonR1.pressed(self.cbr1r)
-    self.c.buttonR2.pressed(self.cbr2r)
+    self.c.buttonA.released(self.cbar)
+    self.c.buttonB.released(self.cbbr)
+    self.c.buttonX.released(self.cbxr)
+    self.c.buttonY.released(self.cbyr)
+    self.c.buttonUp.released(self.cbur)
+    self.c.buttonDown.released(self.cbdr)
+    self.c.buttonLeft.released(self.cblr)
+    self.c.buttonRight.released(self.cbrr)
+    self.c.buttonL1.released(self.cbl1r)
+    self.c.buttonL2.released(self.cbl2r)
+    self.c.buttonR1.released(self.cbr1r)
+    self.c.buttonR2.released(self.cbr2r)
     # Controller axis
     self.c.axis1.changed(self.a1c)
     self.c.axis2.changed(self.a2c)
@@ -77,6 +77,8 @@ class EventHandler:
     def decorator(func):
       if name in self.events:
         self.events[name].append(func)
+      else:
+        raise ValueError("Event " + name + " not found!")
       return func
     return decorator
 
