@@ -73,11 +73,10 @@ class EventHandler:
     self.c.axis3.changed(self.a3c)
     self.c.axis4.changed(self.a4c)
 
-  def on(self,name=None):
+  def on(self,name):
     def decorator(func):
-      eventName = name or func.__name__
-      if eventName in self.events:
-        self.events[eventName].append(func)
+      if name in self.events:
+        self.events[name].append(func)
       return func
     return decorator
 
