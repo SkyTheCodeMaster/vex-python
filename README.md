@@ -11,15 +11,7 @@ Examples:
 MyEvents = EventHandler(controller_1)
 
 @MyEvents.on("controllerAxis1")
-def controllerAxis1(pos):
-  print(pos)
-```
-```py
-MyEvents = EventHandler(controller_1)
-register = MyEvents.on
-
-@register("controllerAxis1")
-def RightStick(pos):
+def PrintAxis(pos):
   print(pos)
 ```
 <details>
