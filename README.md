@@ -10,7 +10,7 @@ Examples:
 ```py
 MyEvents = EventHandler(controller_1)
 
-@MyEvents.on()
+@MyEvents.on("controllerAxis1")
 def controllerAxis1(pos):
   print(pos)
 ```
