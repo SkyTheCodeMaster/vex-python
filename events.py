@@ -69,9 +69,9 @@ class EventHandler:
     self.c.buttonR2.pressed(self.cbr2r)
     # Controller axis
     self.c.axis1.changed(self.a1c)
-    self.c.axis1.changed(self.a2c)
-    self.c.axis1.changed(self.a2c)
-    self.c.axis1.changed(self.a2c)
+    self.c.axis2.changed(self.a2c)
+    self.c.axis3.changed(self.a3c)
+    self.c.axis4.changed(self.a4c)
 
   def on(self,name=None):
     def decorator(func):
@@ -83,23 +83,19 @@ class EventHandler:
 
   def ca1(self):
     pos = self.c.axis1.position()
-    for func in self.events["controllerAxis1"]:
-      func(pos)
+    for func in self.events["controllerAxis1"]: func(pos)
 
   def ca2(self):
     pos = self.c.axis2.position()
-    for func in self.events["controllerAxis2"]:
-      func(pos)
+    for func in self.events["controllerAxis2"]: func(pos)
 
   def ca3(self):
     pos = self.c.axis3.position()
-    for func in self.events["controllerAxis3"]:
-      func(pos)
+    for func in self.events["controllerAxis3"]: func(pos)
 
   def ca4(self):
     pos = self.c.axis4.position()
-    for func in self.events["controllerAxis4"]:
-      func(pos)
+    for func in self.events["controllerAxis4"]: func(pos)
 
   def cbap(self):
     for func in self.events["controllerButtonAPressed"]: func()
